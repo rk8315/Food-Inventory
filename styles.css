@@ -1,0 +1,47 @@
+body {
+	margin: 0;
+	font-family: 'seqoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+footer {
+	padding: 2.2rem;
+	background: #333;
+	color: #f4f4f4;	
+	text-align: center;
+	margin: auto;	
+}
+
+footer p {
+	margin: 0;
+}
+
+.container {
+	max-width: 960px;
+	margin: auto;
+	overflow: hidden;
+	padding: 4rem 1rem;
+}
+
+.center {
+	text-align: center;
+	margin: auto;
+}
+
+#newFood {
+	border: 1px solid black;
+}
+
+#currentItems {
+	border: 1px solid black;
+	margin: 0 auto;
+	width: 50%;
+
+}
+
+#myRecipes {
+	border: 1px solid black;	
+}

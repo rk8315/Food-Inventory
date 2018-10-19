@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="UTF-8">
+	  <title>Food-Inventory</title>
+	  <link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+	<body>
+	  <h1 class="container center">The Food Inventory App</h1>
+	  <!--Enter a new food item -->
+	  <section id="newFood">
+	  	<div class="center container">	  	
+		  	<h3>Enter a new food item</h3>
+		  	<form>
+		  		<label for="newItemName">Item Name:</label>
+		  			<input type="text" id="newItemName" name="itemName"><br>
+		  		<label for="newItemQuantity">Item Quantity:</label>
+		  			<input type="text" id="newItemQuantity">
+			  		<select id="newItemQuantityUnit">
+			  			<option value="lbs">Pound(s)</option>
+			  			<option value="cup">Cup(s)</option>
+			  			<option value="pint">Pint(s)</option>
+			  			<option value="quart">Quart(s)</option>
+			  			<option value="gallon">Gallon(s)</option>
+			  			<option value="liter">Liter(s)</option>
+			  			<option value="ounce">Ounce(s)</option>
+			  			<option value="unit">Unit(s)</option>
+			  		</select><br>
+		  		<label for="purchasedOn">Purchased Date:</label>
+		  			<input type="date" id="purchasedOn" min="2000-01-01" max="2099-12-31"><br>
+	  			<label for="expiresOn">Expiration Date:</label>
+		  			<input type="date" id="expiresOn" min="2000-01-01" max="2099-12-31"><br>
+		  		<input type="submit" value="Submit" onclick="getNewItem()">
+		  	</form>
+	  	</div>
+	  </section>
+
+	  <!-- view the items that you have previously entered -->
+	  <section id="currentItems">
+	  	<div class="center container">
+		  	<h3>My Current Inventory</h3>
+		  	<table>
+		  		<tr>
+		  			<th>Name</th>
+		  			<th>Quantity</th>
+		  			<th>Unit</th>
+		  			<th>Purchased</th>
+		  			<th>Expires</th>
+		  		</tr>
+		  		<tr>
+		  			<td>--</td>
+		  			<td>--</td>
+		  			<td>--</td>
+		  			<td>--</td>
+		  			<td>--</td>
+		  		</tr>
+		  		<tr>
+		  			<td>--</td>
+		  			<td>--</td>
+		  			<td>--</td>
+		  			<td>--</td>
+		  			<td>--</td>
+		  		</tr>
+		  		<tr>
+		  			<td>--</td>
+		  			<td>--</td>
+		  			<td>--</td>
+		  			<td>--</td>
+		  			<td>--</td>
+		  		</tr>
+		  		<tr>
+		  			<td>--</td>
+		  			<td>--</td>
+		  			<td>--</td>
+		  			<td>--</td>
+		  			<td>--</td>
+		  		</tr>
+		  	</table>
+	  	</div>
+	  </section>
+
+	  <!-- view saved recipes that you have entered -->
+	  <section id="myRecipes">
+	  	<h3>My Recipes</h3>
+	  	<div class="favRecipe">
+	  		<p>*Recipe Name*</p>
+	  		<p>Ingredients Owned: *xx* out of *xx*</p>
+	  		<img src="#" alt="A Recipe name"><br>
+	  		<input type="submit" name="makeMe" value="Make Me!">
+	  	</div>
+	  </section>
+	  <footer>
+	  	<p>Created By: Bob Kearns, 2018</p>
+	  </footer>
+	  <script type="text/javascript" src="scripts.js"></script>
+	</body>
+</html>
