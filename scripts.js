@@ -1,13 +1,3 @@
-/*
-function getNewItem(){
-	var itemName = document.getElementById('newItemName').value;
-	var itemQuantity = document.getElementById('newItemQuantity').value;
-	var itemQuantityUnits = document.getElementById('newItemQuantityUnit').value;
-	var itemPurchasedDate = document.getElementById('purchasedOn').value;
-	var itemExpirationDate = document.getElementById('expiresOn').value;
-	alert('You entered the following items:\nName: ' + itemName + '\nQuantity: ' + itemQuantity + ' ' + itemQuantityUnits + '\nPurchased: ' + itemPurchasedDate + '\nExpires: ' + itemExpirationDate);
-}
-*/
 
 // Listen for form submit
 document.getElementById('myForm').addEventListener('submit', saveFood);
@@ -19,14 +9,12 @@ function saveFood(e){
     var newItemQuantityUnit = document.getElementById('newItemQuantityUnit').value;
     var purchaseDate = document.getElementById('purchaseDate').value;
     var expirationDate = document.getElementById('expirationDate').value;
-
 	
     // if user does not enter anything, prevent form from saving
     if(!validateForm(foodName, foodQuantity, newItemQuantityUnit, purchaseDate, expirationDate)){
         return false;
 	}
 	
-    
     var inventoryItem = {
         name: foodName,
 		quantity: foodQuantity,
@@ -34,13 +22,6 @@ function saveFood(e){
 		purchased: purchaseDate,
 		expires: expirationDate
     }
-   
-    /*
-    // local storage test
-    localStorage.setItem('test', 'hello world');
-    console.log(localStorage.getItem('test'));
-    */
-
 
     // test if foodInventory is null
     if(localStorage.getItem('foodInventory') === null){
@@ -69,7 +50,7 @@ function saveFood(e){
 }
 
 // delete foodInventory
-function deleteinventoryItem(name){
+function deleteInventoryItem(name){
     // get foodInventory from localstorage
     var foodInventory = JSON.parse(localStorage.getItem('foodInventory'));
     // loop through foodInventory
@@ -86,6 +67,10 @@ function deleteinventoryItem(name){
     fetchFoodInventory();
 }
 
+// edit foodInventory
+function editInventoryItem(name){
+
+}
 
 // fetch foodInventory
 function fetchFoodInventory(){
@@ -100,14 +85,43 @@ function fetchFoodInventory(){
     for(var i = 0; i < foodInventory.length; i++){
         var name = foodInventory[i].name;
         var quantity = foodInventory[i].quantity;
-
+		var unit = foodInventory[i].unit;
+		var purchased = foodInventory[i].purchased;
+		var expires = foodInventory[i].expires;
+			
+		/*
         foodInventoryResults.innerHTML += 
-            '<div class="well">'+
+            '<div class="table">'+
             '<h3>'+name+
-            ' <a onclick="deleteinventoryItem(\''+name+'\')" class="btn btn-danger" href="#">Remove All</a> '+            
+            ' <a onclick="deleteInventoryItem(\''+name+'\')" class="btn btn-danger" href="#">Remove All</a> '+            
             '</h3>'+
-            '</div>';
-    }
+			'</div>';
+			*/
+	}
+	foodInventoryResults.innerHTML += 
+	'<table class="table">'+
+		'<thead>'+
+			'<tr>'+
+				'<th scope="col">Name</th>'+
+				'<th scope="col">Quantity</th>'+
+				'<th scope="col">Units</th>'+
+				'<th scope="col">Purchase Date</th>'+
+				'<th scope="col">Expire Date</th>' +
+				'<th scope="col">Edit</th>' +
+				'<th scope="col">Remove</th>' +
+			'</tr>'+
+		'<tbody>'+
+			'<tr>'+
+				'<th scope="row">'+name+'</th>'+
+				'<td>'+quantity+'</td>'+
+				'<td>'+unit+'</td>'+
+				'<td>'+purchased+'</td>'+
+				'<td>'+expires+'</td>'+
+				'<td><a onclick="editInventoryItem(\''+name+'\')" class="btn btn-warning btn-sm" href="#">Edit</a></td>'+
+				'<td><a onclick="deleteInventoryItem(\''+name+'\')" class="btn btn-danger btn-sm" href="#">Remove All</a></td>'+
+			'</tr>'+
+		'</tbody>'+
+	'</table>'
 }
 
 function validateForm(foodName, foodQuantity, newItemQuantityUnit, purchaseDate, expirationDate){
