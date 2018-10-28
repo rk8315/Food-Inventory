@@ -1,4 +1,3 @@
-
 // Listen for form submit
 document.getElementById('myForm').addEventListener('submit', saveFood);
 
@@ -96,32 +95,19 @@ function fetchFoodInventory(){
             ' <a onclick="deleteInventoryItem(\''+name+'\')" class="btn btn-danger" href="#">Remove All</a> '+            
             '</h3>'+
 			'</div>';
-			*/
+            */
+           foodInventoryResults.innerHTML += 
+           '<tr>'+
+               '<th scope="row">'+name+'</th>'+
+               '<td>'+quantity+'</td>'+
+               '<td>'+unit+'</td>'+
+               '<td>'+purchased+'</td>'+
+               '<td>'+expires+'</td>'+
+               '<td><a onclick="editInventoryItem(\''+name+'\')" class="btn btn-warning btn-sm" href="#">Edit</a></td>'+
+               '<td><a onclick="deleteInventoryItem(\''+name+'\')" class="btn btn-danger btn-sm" href="#">Remove All</a></td>'+
+           '</tr>'
 	}
-	foodInventoryResults.innerHTML += 
-	'<table class="table">'+
-		'<thead>'+
-			'<tr>'+
-				'<th scope="col">Name</th>'+
-				'<th scope="col">Quantity</th>'+
-				'<th scope="col">Units</th>'+
-				'<th scope="col">Purchase Date</th>'+
-				'<th scope="col">Expire Date</th>' +
-				'<th scope="col">Edit</th>' +
-				'<th scope="col">Remove</th>' +
-			'</tr>'+
-		'<tbody>'+
-			'<tr>'+
-				'<th scope="row">'+name+'</th>'+
-				'<td>'+quantity+'</td>'+
-				'<td>'+unit+'</td>'+
-				'<td>'+purchased+'</td>'+
-				'<td>'+expires+'</td>'+
-				'<td><a onclick="editInventoryItem(\''+name+'\')" class="btn btn-warning btn-sm" href="#">Edit</a></td>'+
-				'<td><a onclick="deleteInventoryItem(\''+name+'\')" class="btn btn-danger btn-sm" href="#">Remove All</a></td>'+
-			'</tr>'+
-		'</tbody>'+
-	'</table>'
+
 }
 
 function validateForm(foodName, foodQuantity, newItemQuantityUnit, purchaseDate, expirationDate){

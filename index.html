@@ -34,14 +34,14 @@
 						<label>Item Quantity</label>
 						<input type='number' class='form-control' id='foodQuantity' placeholder='ex. 7'>
 						<select id="newItemQuantityUnit">
-							<option value="unit">Unit(s)</option>
-							<option value="lbs">Pound(s)</option>
-			  			<option value="cup">Cup(s)</option>
-			  			<option value="pint">Pint(s)</option>
-			  			<option value="quart">Quart(s)</option>
-			  			<option value="gallon">Gallon(s)</option>
-			  			<option value="liter">Liter(s)</option>
-			  			<option value="ounce">Ounce(s)</option>
+							<option value="Unit(s)">Unit(s)</option>
+							<option value="Pound(s)">Pound(s)</option>
+			  			<option value="Cup(s)">Cup(s)</option>
+			  			<option value="Pint(s)">Pint(s)</option>
+			  			<option value="Qaart(s)">Quart(s)</option>
+			  			<option value="Gallon(s)">Gallon(s)</option>
+			  			<option value="Liter(s)">Liter(s)</option>
+			  			<option value="Ounce(s)">Ounce(s)</option>
 			  		</select>
 					</div>
 					<div class="form-group">
@@ -59,7 +59,23 @@
 
       <div class="row marketing">
         <div class="col-lg-4">
-					<div id="foodInventoryResults"></div>
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">Name</th>
+								<th scope="col">Quantity</th>
+								<th scope="col">Units</th>
+								<th scope="col">Purchase Date</th>
+								<th scope="col">Expire Date</th>
+								<th scope="col">Edit</th>
+								<th scope="col">Remove</th>
+							</tr>
+						</thead>
+						<tbody id="foodInventoryResults">
+							<tr>
+							</tr>
+						</tbody>
+					</table>
         </div>
       </div>
 
